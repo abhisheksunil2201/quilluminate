@@ -14,7 +14,8 @@ const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
 
   useEffect(() => {
     if (isOpen) toggleOpen();
-  }, [pathname, isOpen]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   const closeOnCurrent = (href: string) => {
     if (pathname === href) {
