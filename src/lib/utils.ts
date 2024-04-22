@@ -42,7 +42,6 @@ export function constructMetadata({
     },
     icons,
     metadataBase: new URL("https://quilluminate.vercel.app"),
-    themeColor: "#ffffff",
     ...(noIndex && {
       robots: {
         index: false,
