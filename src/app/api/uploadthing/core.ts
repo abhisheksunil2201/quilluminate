@@ -36,14 +36,12 @@ const onUploadComplete = async ({
       key: file.key,
       name: file.name,
       userId: metadata.userId,
-      url: `https://uploadthing-prod.s3.us-west-2.amazonaws.com/${file.key}`,
+      url: `https://utfs.io/f/${file.key}`,
       uploadStatus: "PROCESSING",
     },
   });
   try {
-    const res = await fetch(
-      `https://uploadthing-prod.s3.us-west-2.amazonaws.com/${file.key}`
-    );
+    const res = await fetch(`https://utfs.io/f/${file.key}`);
     const blob = await res.blob();
     const loader = new PDFLoader(blob);
     const pageLevelDocs = await loader.load();
